@@ -1,0 +1,32 @@
+## rails new ecomm_api --api -d postgresql --skip-git
+
+## need to enable git
+## 1 
+rails new ecomm_api --api -d postgresql  
+
+## 2
+rails db:create
+
+##3 
+##Products – ProductID, Name(string), Description(string), Category(string), Keywords(string[]), Price(decimal), ImageURL(string) (This will be pre-populated) (Show/Index)
+
+rails g scaffold product name:string  description:string category:string keyword:string  price:decimal quantity_instock:integer
+
+
+## 4 
+rails db:migrate
+
+## above caused a problem when I tried with another option
+## 5 -- ran the one below to undo scaffold
+## rails destroy scaffold product
+
+
+
+
+rails g scaffold product name:string  description:string category:string keyword:string array:true   price:decimal quantity_instock:integer
+
+
+CartItems  – ItemID, ProductID, Price, Qty, (CartID) (Created, Updated, Destroyed)
+UserCart – CartID, UserID, LastAccessedDate (Create, Update, Destroy)
+User – UserID, Email, Password (Create, Update)
+
