@@ -9,6 +9,7 @@ import ProductCards from "./components/ProductCards";
 import CartSummary from "./components/CartSummary";
 import CartDetail from "./components/CartDetail";
 import LogoutButton from "./components/LogOutButton";
+import axios from "axios";
 
 //css and images
 import logo from "./logo.svg";
@@ -29,7 +30,9 @@ class App extends Component {
       cart: [],
       useritemsquantity: 0,
       userId: null,
-      fetchCartDetail: false
+      userCartId: null,
+      fetchCartDetail: false,
+      currentDate: null
     };
 
     this.updateUserStatus = this.updateUserStatus.bind(this);
@@ -39,11 +42,36 @@ class App extends Component {
     this.removeFromCart = this.removeFromCart.bind(this);
     this.logoutUser = this.logoutUser.bind(this);
     this.toggle_fetchCartDetail = this.toggle_fetchCartDetail.bind(this);
+    this.updateuserCartId = this.updateuserCartId.bind(this);
   }
 
   //  updateCart
   updateCart(productid, userquantity) {
-    console.log("add to cart id : ", productid, " qty: ", userquantity);
+    console.log(
+      "add to cart  product id : ",
+      productid,
+      " qty: ",
+      userquantity
+    );
+    //localhost:3000/users/1/usercarts/1/cartitems
+    // curl -i -X POST -H 'Content-Type: application/json' -d '{"quantity": "20","product_id": "12"}' http://localhost:3000/users/1/usercarts/1/cartitems
+
+    let cartpayloadobj = {
+      quantity: userquantity,
+      product_id: productid
+    };
+
+    console.log(cartpayloadobj);
+
+    axios
+      .post(
+        `http://localhost:3000/users/${this.state.userId}/usercarts/${this.state.userCartId}/cartitems`,
+        cartpayloadobj
+      )
+      .then(response => {
+        console.log(response);
+      });
+
     // DB  HERE CALL TO UPDATE IN DB
     var newqty = 0;
     newqty = parseInt(this.state.useritemsquantity) + parseInt(userquantity);
@@ -90,6 +118,12 @@ class App extends Component {
       userId: userId
     });
   }
+  // updateUsercartid
+  updateuserCartId(cartId) {
+    this.setState({
+      userCartId: cartId
+    });
+  }
 
   // updatefetchCartDetail
 
@@ -105,6 +139,21 @@ class App extends Component {
     // console.log(username);
   }
 
+  componentDidMount() {
+    console.log(" In App.js");
+
+    let today = new Date();
+    let date1 =
+      today.getFullYear() +
+      "-" +
+      parseInt(today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    console.log(date1);
+
+    this.setState({ currentDate: date1 });
+  }
+
   render() {
     return (
       <div className="App">
@@ -118,6 +167,7 @@ class App extends Component {
                 <header className="App-header">
                   <img src={logo} className="App-logo" alt="logo" />
                   <h1>Book-o-Radar</h1>
+                  <h5>{this.state.currentDate}</h5>
                 </header>
               </div>
 
@@ -134,9 +184,11 @@ class App extends Component {
             <Col lg={8} md={8} sm={8} xs={8}>
               {!this.state.loggedIn && (
                 <Signup
+                  currentDate={this.state.currentDate}
                   loggedIn={this.state.loggedIn}
                   updateUserStatus={this.updateUserStatus}
                   updateUserId={this.updateUserId}
+                  updateuserCartId={this.updateuserCartId}
                 />
               )}
 
@@ -168,6 +220,7 @@ class App extends Component {
                     toggle_fetchCartDetail={this.toggle_fetchCartDetail}
                     modifyCart={this.modifyCart}
                     removeFromCart={this.removeFromCart}
+                    userCartId={this.state.userCartId}
                   />
                 )}
               </div>
@@ -189,7 +242,10 @@ class App extends Component {
             {!this.state.fetchCartDetail && (
               <Col lg={12} md={12} sm={12} xs={12}>
                 <div className=" flexparent_row_leftalign">
-                  <ProductCards updateCart={this.updateCart} />
+                  <ProductCards
+                    updateCart={this.updateCart}
+                    userCartId={this.state.userCartId}
+                  />
                 </div>
               </Col>
             )}

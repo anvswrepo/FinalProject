@@ -57,6 +57,12 @@ form {
 .textblue {
   color: #0067a5;
 }
+
+.textwhite_shadowgray {
+  color: white;
+  text-shadow: #666;
+}
+
 .textcoral {
   color: #ff4040;
 }

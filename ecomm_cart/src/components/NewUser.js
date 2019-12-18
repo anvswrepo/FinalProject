@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 // import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "../css/custom.css";
+// import { getCurrentDate } from "../utils";
 
 class Signup extends Component {
   constructor() {
@@ -27,6 +28,8 @@ class Signup extends Component {
   handleSubmit_signup(event) {
     // console.log("sign-up handleSubmit, username: ");
     console.log("new username created: " + this.state.username);
+    // console.log(getCurrentDate());
+
     event.preventDefault();
 
     let payloadobj = {
@@ -42,6 +45,19 @@ class Signup extends Component {
         this.props.updateUserStatus(this.state.username);
         this.props.updateUserId(response.data.id);
 
+        let cartpayloadobj = {
+          last_accessed_date: this.props.currentDate
+        };
+        axios
+          .post(
+            `http://localhost:3000/users/${response.data.id}/usercarts`,
+            cartpayloadobj
+          )
+          .then(response => {
+            console.log(response);
+            this.props.updateuserCartId(response.data.id);
+            // updateuserCartId
+          });
         // this.setState({
         //   //redirect to login page
         //   redirectTo: "/login"

@@ -8,7 +8,7 @@ class LogoutButton extends Component {
     return (
       <div className="flexparent_row_leftalign logoutgrp">
         {/* <Col className="logoutgrp" lg={6} md={6} sm={6} xs={6}> */}
-        <span className="textblue displayflex">
+        <span className="textwhite_shadowgray displayflex">
           Hello {this.props.username}
         </span>
         {/* </Col> */}

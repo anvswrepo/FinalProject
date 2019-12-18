@@ -16,13 +16,32 @@ class UsercartsController < ApplicationController
   # POST /usercarts
   def create
     @usercart = Usercart.new(usercart_params)
+    @usercart.user_id = params[:user_id]
+    puts @usercart.user_id 
 
     if @usercart.save
-      render json: @usercart, status: :created, location: @usercart
+      # render json: @usercart, status: :created, location: @usercart
+      render json: @usercart, status: :created 
     else
       render json: @usercart.errors, status: :unprocessable_entity
     end
   end
+
+
+# POST /temperatures
+# def create
+#   @temperature = Temperature.new(temperature_params)
+#   @temperature.location_id = params[:location_id]
+
+#   if @temperature.save
+#     render json: @temperature, status: :created 
+#   else
+#     render json: @temperature.errors, status: :unprocessable_entity
+#   end
+# end
+
+
+
 
   # PATCH/PUT /usercarts/1
   def update

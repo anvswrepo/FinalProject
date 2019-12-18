@@ -7649,3 +7649,1796 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 8579)
 
 
+Started GET "/products/" for ::1 at 2019-12-18 08:21:50 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 12:53:39 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 18.5ms | ActiveRecord: 17.8ms | Allocations: 20183)
+
+
+Started GET "/users" for ::1 at 2019-12-18 12:57:12 -0500
+Processing by UsersController#index as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 5.7ms | Allocations: 8203)
+
+
+Started GET "/users/1/usercarts/1" for ::1 at 2019-12-18 12:57:52 -0500
+Processing by UsercartsController#show as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}, "user_id"=>"1", "id"=>"1"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:44:in `set_usercart'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 5215)
+
+
+Started GET "/users/1/usercarts/6" for ::1 at 2019-12-18 12:58:11 -0500
+Processing by UsercartsController#show as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}, "user_id"=>"1", "id"=>"6"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:44:in `set_usercart'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 623)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Usercart with 'id'=6):
+  
+app/controllers/usercarts_controller.rb:44:in `set_usercart'
+Started POST "/users/1/usercarts/6" for ::1 at 2019-12-18 12:58:19 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts/6"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/1/usercarts:1" for ::1 at 2019-12-18 12:59:00 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts:1"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/1/usercarts:2" for ::1 at 2019-12-18 12:59:08 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts:2"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/1/usercarts/2" for ::1 at 2019-12-18 12:59:15 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts/2"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2019-12-18 13:44:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (1.4ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 17159)
+
+
+Started GET "/users/1/carts" for ::1 at 2019-12-18 13:44:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/carts"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/usercarts/2" for ::1 at 2019-12-18 13:44:56 -0500
+Processing by UsercartsController#show as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}, "user_id"=>"1", "id"=>"2"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:44:in `set_usercart'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 764)
+
+
+Started GET "/users/1/usercarts" for ::1 at 2019-12-18 13:45:04 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1145)
+
+
+Started GET "/users/1/usercarts/1" for ::1 at 2019-12-18 13:45:09 -0500
+Processing by UsercartsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:44:in `set_usercart'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 704)
+
+
+Started POST "/users/1/usercarts/5?last_accessed_date=2019-12-08" for ::1 at 2019-12-18 13:48:18 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts/5"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/1/usercarts/5?last_accessed_date=2019-12-08" for ::1 at 2019-12-18 13:56:28 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts/5"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/1/usercarts?last_accessed_date=2019-12-08" for ::1 at 2019-12-18 14:00:39 -0500
+Processing by UsercartsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}, "last_accessed_date"=>"2019-12-08", "user_id"=>"1"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 1188)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: usercart):
+  
+app/controllers/usercarts_controller.rb:66:in `usercart_params'
+app/controllers/usercarts_controller.rb:18:in `create'
+Started POST "/users/1/usercarts?last_accessed_date=2019-12-20" for ::1 at 2019-12-18 14:01:35 -0500
+Processing by UsercartsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Hello2", "content"=>"Hello world", "author"=>"amisha2"}, "last_accessed_date"=>"2019-12-20", "user_id"=>"1"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 126)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: usercart):
+  
+app/controllers/usercarts_controller.rb:66:in `usercart_params'
+app/controllers/usercarts_controller.rb:18:in `create'
+Started GET "/users/1/usercarts?last_accessed_date=2019-12-20" for ::1 at 2019-12-18 14:06:32 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-20", "user_id"=>"1"}
+  [1m[36mUsercart Load (0.6ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 4.1ms | ActiveRecord: 4.9ms | Allocations: 5417)
+
+
+Started POST "/users/1/usercarts" for ::1 at 2019-12-18 14:13:49 -0500
+Processing by UsercartsController#create as */*
+  Parameters: {"last_accessed_date"=>"2019-12-20", "user_id"=>"1", "usercart"=>{"last_accessed_date"=>"2019-12-20"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUsercart Create (5.8ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-20"], ["created_at", "2019-12-18 19:13:49.557444"], ["updated_at", "2019-12-18 19:13:49.557444"], ["user_id", 1]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+Completed 201 Created in 61ms (Views: 0.3ms | ActiveRecord: 20.8ms | Allocations: 9576)
+
+
+Started GET "/users/1/usercarts" for ::1 at 2019-12-18 14:14:31 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 1282)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:24:54 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 4.3ms | Allocations: 19202)
+
+
+Started POST "/users" for ::1 at 2019-12-18 14:25:22 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"rocky", "password"=>"[FILTERED]", "user"=>{"username"=>"rocky", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "rocky"], ["password", "rocky"], ["created_at", "2019-12-18 19:25:22.482551"], ["updated_at", "2019-12-18 19:25:22.482551"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 4.8ms | Allocations: 2567)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:26:04 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
+Started POST "/users" for ::1 at 2019-12-18 14:26:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"sista", "password"=>"[FILTERED]", "user"=>{"username"=>"sista", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "sista"], ["password", "sista"], ["created_at", "2019-12-18 19:26:14.511156"], ["updated_at", "2019-12-18 19:26:14.511156"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 6ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 2369)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:28:45 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:28:50 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 3.6ms | Allocations: 13218)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:29:05 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 2.3ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:30:22 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:30:29 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 3.6ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:30:42 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:31:23 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (4.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 4.6ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:31:40 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.1ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:32:10 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (5.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 5.5ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:39:04 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:39:27 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 0.7ms | Allocations: 13217)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:39:41 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:40:38 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (15.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 15.5ms | ActiveRecord: 15.9ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:41:26 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 3.7ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:42:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 1.9ms | Allocations: 13214)
+
+
+Started POST "/users" for ::1 at 2019-12-18 14:43:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"aman", "password"=>"[FILTERED]", "user"=>{"username"=>"aman", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "aman"], ["password", "aman"], ["created_at", "2019-12-18 19:43:14.652862"], ["updated_at", "2019-12-18 19:43:14.652862"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 2367)
+
+
+Started POST "/users/%7Bresponse.data.id%7D/usercarts" for ::1 at 2019-12-18 14:43:14 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/%7Bresponse.data.id%7D/usercarts"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/products/" for ::1 at 2019-12-18 14:44:15 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 2.6ms | Allocations: 13216)
+
+
+Started POST "/users" for ::1 at 2019-12-18 14:44:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"amisha", "password"=>"[FILTERED]", "user"=>{"username"=>"amisha", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "amisha"], ["password", "amisha"], ["created_at", "2019-12-18 19:44:23.382838"], ["updated_at", "2019-12-18 19:44:23.382838"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 7ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 2369)
+
+
+Started POST "/users/29/usercarts" for ::1 at 2019-12-18 14:44:23 -0500
+Processing by UsercartsController#create as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-18", "user_id"=>"29", "usercart"=>{"last_accessed_date"=>"2019-12-18"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUsercart Create (0.5ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-18"], ["created_at", "2019-12-18 19:44:23.472089"], ["updated_at", "2019-12-18 19:44:23.472089"], ["user_id", 29]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 3434)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:45:37 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 13214)
+
+
+Started GET "/users/1" for ::1 at 2019-12-18 14:46:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (1.7ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 14886)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 14:47:00 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 13214)
+
+
+Started GET "/users/1/usercarts/1" for ::1 at 2019-12-18 15:01:26 -0500
+Processing by UsercartsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:62:in `set_usercart'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 903)
+
+
+Started GET "/users/1/usercarts" for ::1 at 2019-12-18 15:01:30 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUsercart Load (0.5ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1367)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 15:01:56 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 2.3ms | Allocations: 13256)
+
+
+Started POST "/users" for ::1 at 2019-12-18 15:02:08 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", ""], ["password", ""], ["created_at", "2019-12-18 20:02:08.831353"], ["updated_at", "2019-12-18 20:02:08.831353"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 6ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 2368)
+
+
+Started GET "/users/1" for ::1 at 2019-12-18 15:02:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.6ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 8592)
+
+
+Started GET "/users/1" for ::1 at 2019-12-18 15:05:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.1ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 9.7ms | Allocations: 27786)
+
+
+Started POST "/users/1/usercarts/1" for ::1 at 2019-12-18 15:24:01 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/1/usercarts/1"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2019-12-18 15:24:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (2.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 26957)
+
+
+Started GET "/usercarts" for ::1 at 2019-12-18 15:24:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usercarts"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/usercarts" for ::1 at 2019-12-18 15:25:00 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1402)
+
+
+Started POST "/users/1/usercarts/1/cartitems" for ::1 at 2019-12-18 15:44:53 -0500
+Processing by CartitemsController#create as */*
+  Parameters: {"quantity"=>"20", "product_id"=>"12", "user_id"=>"1", "usercart_id"=>"1", "cartitem"=>{"quantity"=>"20", "product_id"=>"12"}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (3.7ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 20], ["created_at", "2019-12-18 20:44:53.413828"], ["updated_at", "2019-12-18 20:44:53.413828"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 11ms (Views: 0.4ms | ActiveRecord: 5.5ms | Allocations: 3829)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 15:51:45 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 1.0ms | Allocations: 13350)
+
+
+Started POST "/users" for ::1 at 2019-12-18 15:52:01 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"sun1", "password"=>"[FILTERED]", "user"=>{"username"=>"sun1", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "sun1"], ["password", "sun1"], ["created_at", "2019-12-18 20:52:01.439069"], ["updated_at", "2019-12-18 20:52:01.439069"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 5ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 2507)
+
+
+Started POST "/users/31/usercarts" for ::1 at 2019-12-18 15:52:01 -0500
+Processing by UsercartsController#create as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-18", "user_id"=>"31", "usercart"=>{"last_accessed_date"=>"2019-12-18"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUsercart Create (0.6ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-18"], ["created_at", "2019-12-18 20:52:01.498145"], ["updated_at", "2019-12-18 20:52:01.498145"], ["user_id", 31]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+Completed 201 Created in 9ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 3694)
+
+
+Started GET "/users" for ::1 at 2019-12-18 15:52:23 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 4279)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 15:52:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2154)
+
+
+Started GET "/users/31/usercarts" for ::1 at 2019-12-18 15:53:03 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"31"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1483)
+
+
+Started GET "/user/31/usercarts" for ::1 at 2019-12-18 15:53:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/31/usercarts"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/3" for ::1 at 2019-12-18 15:53:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 3]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 11808)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 15:53:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2131)
+
+
+Started GET "/usercarts" for ::1 at 2019-12-18 15:54:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usercarts"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2019-12-18 15:54:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.2ms | Allocations: 8334)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
+  
+app/controllers/users_controller.rb:67:in `block in show'
+app/controllers/users_controller.rb:63:in `show'
+Started GET "/users/1/usercarts" for ::1 at 2019-12-18 15:54:41 -0500
+Processing by UsercartsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  ↳ app/controllers/usercarts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1482)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 15:55:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2129)
+
+
+Started GET "/users/30" for ::1 at 2019-12-18 15:55:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 1787)
+
+
+  
+NoMethodError (undefined method `cartitems' for nil:NilClass):
+  
+app/controllers/users_controller.rb:59:in `show'
+Started GET "/users" for ::1 at 2019-12-18 15:55:21 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 4278)
+
+
+Started GET "/users/29" for ::1 at 2019-12-18 15:55:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 8]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2129)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 15:56:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 2129)
+
+
+Started POST "/users/1/usercarts/1/cartitems" for ::1 at 2019-12-18 16:04:00 -0500
+Processing by CartitemsController#create as */*
+  Parameters: {"quantity"=>"20", "product_id"=>"12", "user_id"=>"1", "usercart_id"=>"1", "cartitem"=>{"quantity"=>"20", "product_id"=>"12"}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (0.4ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 20], ["created_at", "2019-12-18 21:04:00.788031"], ["updated_at", "2019-12-18 21:04:00.788031"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3530)
+
+
+Started GET "/users/1" for ::1 at 2019-12-18 16:04:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 404 Not Found in 18ms (ActiveRecord: 2.0ms | Allocations: 8404)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
+  
+app/controllers/users_controller.rb:67:in `block in show'
+app/controllers/users_controller.rb:63:in `show'
+Started GET "/users/2" for ::1 at 2019-12-18 16:04:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 2]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 8580)
+
+
+Started GET "/users/1" for ::1 at 2019-12-18 16:04:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 404 Not Found in 14ms (ActiveRecord: 1.7ms | Allocations: 8348)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
+  
+app/controllers/users_controller.rb:67:in `block in show'
+app/controllers/users_controller.rb:63:in `show'
+Started GET "/products" for ::1 at 2019-12-18 16:05:39 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 13213)
+
+
+Started GET "/products/1" for ::1 at 2019-12-18 16:06:00 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:44:in `set_product'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 766)
+
+
+Started POST "/users/31/usercarts/1/cartitems" for ::1 at 2019-12-18 16:06:27 -0500
+Processing by CartitemsController#create as */*
+  Parameters: {"quantity"=>"20", "product_id"=>12, "user_id"=>"31", "usercart_id"=>"1", "cartitem"=>{"quantity"=>"20", "product_id"=>12}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (0.3ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 20], ["created_at", "2019-12-18 21:06:27.341320"], ["updated_at", "2019-12-18 21:06:27.341320"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3428)
+
+
+Started GET "/products/31" for ::1 at 2019-12-18 16:06:35 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:44:in `set_product'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 772)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 16:06:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2129)
+
+
+Started POST "/users/31/usercarts/9/cartitems" for ::1 at 2019-12-18 16:07:15 -0500
+Processing by CartitemsController#create as */*
+  Parameters: {"quantity"=>"20", "product_id"=>12, "user_id"=>"31", "usercart_id"=>"9", "cartitem"=>{"quantity"=>"20", "product_id"=>12}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (0.4ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 20], ["created_at", "2019-12-18 21:07:15.560068"], ["updated_at", "2019-12-18 21:07:15.560068"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 3428)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 16:07:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2129)
+
+
+Started POST "/users/31/usercarts/9/cartitems" for ::1 at 2019-12-18 16:08:49 -0500
+Processing by CartitemsController#create as */*
+  Parameters: {"quantity"=>"20", "product_id"=>"12", "user_id"=>"31", "usercart_id"=>"9", "cartitem"=>{"quantity"=>"20", "product_id"=>"12"}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (0.2ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 20], ["created_at", "2019-12-18 21:08:49.191463"], ["updated_at", "2019-12-18 21:08:49.191463"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3428)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 16:09:04 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.3ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2129)
+
+
+Started GET "/users" for ::1 at 2019-12-18 16:09:09 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 4279)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 16:09:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2129)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCartitem Load (0.5ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems"[0m
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUsercart Load (0.5ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts"[0m
+  [1m[36mCartitem Load (0.6ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems"[0m
+Started POST "/users" for ::1 at 2019-12-18 16:22:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"dow", "password"=>"[FILTERED]", "user"=>{"username"=>"dow", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "dow"], ["password", "dow"], ["created_at", "2019-12-18 21:22:30.566495"], ["updated_at", "2019-12-18 21:22:30.566495"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 4ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 2385)
+
+
+Started POST "/users/32/usercarts" for ::1 at 2019-12-18 16:22:30 -0500
+Processing by UsercartsController#create as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-18", "user_id"=>"32", "usercart"=>{"last_accessed_date"=>"2019-12-18"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[36mUsercart Create (0.4ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-18"], ["created_at", "2019-12-18 21:22:30.637303"], ["updated_at", "2019-12-18 21:22:30.637303"], ["user_id", 32]]
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:21:in `create'
+Completed 201 Created in 18ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3478)
+
+
+Started GET "/users/31" for ::1 at 2019-12-18 16:28:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.4ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 9]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2168)
+
+
+Started GET "/products" for ::1 at 2019-12-18 16:28:23 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.9ms | Allocations: 13235)
+
+
+  [1m[36mCartitem Load (1.0ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems"[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/products/" for ::1 at 2019-12-18 16:55:30 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (34.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 16.8ms | ActiveRecord: 34.9ms | Allocations: 13312)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 16:59:43 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 1.2ms | Allocations: 13214)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 17:00:06 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (5.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 5.2ms | Allocations: 13214)
+
+
+Started POST "/users/null/usercarts/null/cartitems" for ::1 at 2019-12-18 17:08:16 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>1, "product_id"=>2, "user_id"=>"null", "usercart_id"=>"null", "cartitem"=>{"quantity"=>1, "product_id"=>2}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (1.1ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 1], ["created_at", "2019-12-18 22:08:16.720599"], ["updated_at", "2019-12-18 22:08:16.720599"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 3524)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 17:12:30 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (8.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 19.3ms | ActiveRecord: 8.9ms | Allocations: 13257)
+
+
+Started POST "/users/null/usercarts/null/cartitems" for ::1 at 2019-12-18 17:12:35 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>1, "product_id"=>2, "user_id"=>"null", "usercart_id"=>"null", "cartitem"=>{"quantity"=>1, "product_id"=>2}}
+[31mUnpermitted parameter: :product_id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[36mCartitem Create (3.0ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["quantity", 1], ["created_at", "2019-12-18 22:12:35.378702"], ["updated_at", "2019-12-18 22:12:35.378702"], ["usercart_id", 1]]
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:21:in `create'
+Completed 201 Created in 10ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 3426)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 17:27:22 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 2.3ms | Allocations: 13315)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 18:14:41 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 3.6ms | Allocations: 20181)
+
+
+Started POST "/users/null/usercarts/null/cartitems" for ::1 at 2019-12-18 18:14:45 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>1, "product_id"=>1, "user_id"=>"null", "usercart_id"=>"null", "cartitem"=>{"quantity"=>1, "product_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 28ms (Views: 0.1ms | ActiveRecord: 5.6ms | Allocations: 12397)
+
+
+Started POST "/users" for ::1 at 2019-12-18 18:15:11 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"dataoffice", "password"=>"[FILTERED]", "user"=>{"username"=>"dataoffice", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "dataoffice"], ["password", "d1"], ["created_at", "2019-12-18 23:15:11.467478"], ["updated_at", "2019-12-18 23:15:11.467478"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 9ms (Views: 0.5ms | ActiveRecord: 4.2ms | Allocations: 5985)
+
+
+Started POST "/users/33/usercarts" for ::1 at 2019-12-18 18:15:11 -0500
+Processing by UsercartsController#create as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-18", "user_id"=>"33", "usercart"=>{"last_accessed_date"=>"2019-12-18"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[36mUsercart Create (0.3ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-18"], ["created_at", "2019-12-18 23:15:11.556300"], ["updated_at", "2019-12-18 23:15:11.556300"], ["user_id", 33]]
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 6483)
+
+
+Started POST "/users/33/usercarts/11/cartitems" for ::1 at 2019-12-18 18:15:17 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>1, "product_id"=>2, "user_id"=>"33", "usercart_id"=>"11", "cartitem"=>{"quantity"=>1, "product_id"=>2}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mCartitem Create (0.3ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id", "product_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 1], ["created_at", "2019-12-18 23:15:17.277227"], ["updated_at", "2019-12-18 23:15:17.277227"], ["usercart_id", 11], ["product_id", 2]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+Completed 201 Created in 11ms (Views: 0.3ms | ActiveRecord: 5.9ms | Allocations: 3543)
+
+
+Started GET "/products/" for ::1 at 2019-12-18 18:17:43 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (13.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 11.1ms | ActiveRecord: 13.5ms | Allocations: 13236)
+
+
+Started POST "/users" for ::1 at 2019-12-18 18:17:56 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"ppppp", "password"=>"[FILTERED]", "user"=>{"username"=>"ppppp", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "ppppp"], ["password", "ppppp"], ["created_at", "2019-12-18 23:17:56.765541"], ["updated_at", "2019-12-18 23:17:56.765541"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 6ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 2369)
+
+
+Started POST "/users/34/usercarts" for ::1 at 2019-12-18 18:17:56 -0500
+Processing by UsercartsController#create as HTML
+  Parameters: {"last_accessed_date"=>"2019-12-18", "user_id"=>"34", "usercart"=>{"last_accessed_date"=>"2019-12-18"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[36mUsercart Create (0.4ms)[0m  [1m[32mINSERT INTO "usercarts" ("last_accessed_date", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["last_accessed_date", "2019-12-18"], ["created_at", "2019-12-18 23:17:56.851219"], ["updated_at", "2019-12-18 23:17:56.851219"], ["user_id", 34]]
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usercarts_controller.rb:22:in `create'
+Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3408)
+
+
+Started POST "/users/34/usercarts/12/cartitems" for ::1 at 2019-12-18 18:18:17 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>1, "product_id"=>3, "user_id"=>"34", "usercart_id"=>"12", "cartitem"=>{"quantity"=>1, "product_id"=>3}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mUsercart Load (0.4ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mCartitem Create (0.3ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id", "product_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 1], ["created_at", "2019-12-18 23:18:17.468020"], ["updated_at", "2019-12-18 23:18:17.468020"], ["usercart_id", 12], ["product_id", 3]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3425)
+
+
+Started GET "/users/34" for ::1 at 2019-12-18 18:18:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.4ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 12]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 7859)
+
+
+Started POST "/users/34/usercarts/12/cartitems" for ::1 at 2019-12-18 18:19:14 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>"12", "product_id"=>3, "user_id"=>"34", "usercart_id"=>"12", "cartitem"=>{"quantity"=>"12", "product_id"=>3}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mCartitem Create (0.3ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id", "product_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 12], ["created_at", "2019-12-18 23:19:14.064185"], ["updated_at", "2019-12-18 23:19:14.064185"], ["usercart_id", 12], ["product_id", 3]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 3425)
+
+
+Started GET "/users/34" for ::1 at 2019-12-18 18:19:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 12]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 8482)
+
+
+Started POST "/users/34/usercarts/12/cartitems" for ::1 at 2019-12-18 18:19:40 -0500
+Processing by CartitemsController#create as HTML
+  Parameters: {"quantity"=>"3", "product_id"=>6, "user_id"=>"34", "usercart_id"=>"12", "cartitem"=>{"quantity"=>"3", "product_id"=>6}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mUsercart Load (0.3ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[36mCartitem Create (0.5ms)[0m  [1m[32mINSERT INTO "cartitems" ("quantity", "created_at", "updated_at", "usercart_id", "product_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 3], ["created_at", "2019-12-18 23:19:40.537041"], ["updated_at", "2019-12-18 23:19:40.537041"], ["usercart_id", 12], ["product_id", 6]]
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cartitems_controller.rb:22:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 3425)
+
+
+Started GET "/users/34" for ::1 at 2019-12-18 18:19:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:145:in `set_user'
+  [1m[36mUsercart Load (0.2ms)[0m  [1m[34mSELECT "usercarts".* FROM "usercarts" WHERE "usercarts"."user_id" = $1 ORDER BY "usercarts"."id" ASC LIMIT $2[0m  [["user_id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `show'
+  [1m[36mCartitem Load (0.2ms)[0m  [1m[34mSELECT "cartitems".* FROM "cartitems" WHERE "cartitems"."usercart_id" = $1[0m  [["usercart_id", 12]]
+  ↳ app/controllers/users_controller.rb:63:in `show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:68:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `block in show'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 11709)
+
+
+Started POST "/users" for ::1 at 2019-12-18 18:25:39 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"rocky", "password"=>"[FILTERED]", "user"=>{"username"=>"rocky", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "rocky"], ["password", "ricky"], ["created_at", "2019-12-18 23:25:39.600174"], ["updated_at", "2019-12-18 23:25:39.600174"]]
+  ↳ app/controllers/users_controller.rb:111:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:111:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 2388)
+
+
