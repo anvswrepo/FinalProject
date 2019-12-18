@@ -5,19 +5,21 @@ import { DropdownButton } from "react-bootstrap";
 import { Dropdown } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "../css/custom.css";
-import book from "../book.svg";
 
-class ProductSingleCard extends Component {
+class SingleCartItem extends Component {
   constructor() {
     super();
     this.state = {
       productid: null,
       price: null,
       quantity_instock: null,
-      userquantity: 1
+      userquantity: 0
     };
-    this.callAddToCart = this.callAddToCart.bind(this);
+    // this.callAddToCart = this.callAddToCart.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.callModifyCart = this.callModifyCart.bind(this);
+    this.callRemoveFromCart = this.callRemoveFromCart.bind(this);
+
     // this.handleChange_qty = this.handleChange_qty.bind(this);
   }
 
@@ -73,52 +75,79 @@ class ProductSingleCard extends Component {
   //     }
   //   }
 
-  callAddToCart() {
-    console.log("Add to cart", this.props.item.name, " ", this.props.item.id);
+  callModifyCart() {
+    console.log(
+      "Modify ",
+      this.props.item.name,
+      " id:",
+      this.props.item.id,
+      " qty:",
+      this.state.userquantity
+    );
+    let qty_change =
+      parseInt(this.state.userquantity) -
+      parseInt(this.props.item.user_quantity);
+    console.log(qty_change);
+    this.props.modifyCart(
+      this.props.item.id,
+      this.state.userquantity,
+      qty_change
+    );
+  }
 
-    this.props.updateCart(this.props.item.id, this.state.userquantity);
+  callRemoveFromCart() {
+    console.log("Remove ", this.props.item.name, " ", this.props.item.id);
+
+    this.props.removeFromCart(this.props.item.id, this.state.userquantity);
     this.setState({ userquantity: 0 });
   }
+
   componentDidMount() {
     console.log(" In Product Single Card", this.props);
     // console.log(this.props.item.name);
     // this.getProductsAPI();
+    this.setState({ userquantity: this.props.item.user_quantity });
   }
 
   render() {
     return (
-      <div className="singleproductcard flexparent_row_leftalign">
-        <div className="singleproductcard_innerdiv">
-          <img src={book} className="booklogo" alt="logo" />
-
-          <p className="booktitle"> {this.props.item.name.toLowerCase()} </p>
-          {/* <p> {this.props.item.category} </p> */}
-          <p className="bookprice"> ${this.props.item.price} </p>
-          <p className="bookstock">
-            {" "}
-            In-stock: {this.props.item.quantity_instock}{" "}
-          </p>
+      <div className="singlecartitem flexparent_row_leftalign">
+        <div className="booktitleincart">
+          {" "}
+          {this.props.item.name.toLowerCase()}{" "}
+        </div>
+        <div className="bookprice"> ${this.props.item.price} </div>
+        <div>
           <input
-            className="form-input"
+            className="form-input form-input-incart "
             type="integer"
             id="userquantity"
             name="userquantity"
             placeholder="1"
             value={this.state.userquantity}
             onChange={this.handleChange}
-            disabled={this.props.item.quantity_instock > 0 ? false : true}
+            //   disabled={this.props.item.quantity_instock > 0 ? false : true}
           />
+
           <button
-            className="bkcoral buybutton"
-            onClick={this.callAddToCart}
+            className="updatebutton"
+            onClick={this.callModifyCart}
             variant="info"
             size="lg"
           >
-            BUY
+            Update
           </button>
-        </div>{" "}
+          <button
+            className="removebutton"
+            onClick={this.callRemoveFromCart}
+            variant="info"
+            size="lg"
+          >
+            Remove
+          </button>
+        </div>
       </div>
     );
   }
 }
-export default ProductSingleCard;
+export default SingleCartItem;

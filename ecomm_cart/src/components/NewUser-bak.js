@@ -94,26 +94,44 @@ class Signup extends Component {
               {/* <div className="form-group">
               <div className="col-1 col-ml-auto"> */}
               <Col lg={12} md={12} sm={12} xs={12}>
-                <span className="signuplogingrp ">
-                  <input
-                    className="form-input  "
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Username"
-                    value={this.state.username}
-                    onChange={this.handleChange}
-                  />
+                <div>
+                  <div className="col-1 col-ml-auto">
+                    {/* <label className="form-label" htmlFor="username">
+                      Username
+                    </label> */}
+                  </div>
+                  <div className="col-3 col-mr-auto">
+                    <input
+                      className="form-input"
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Username"
+                      value={this.state.username}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
 
-                  <input
-                    className="form-input "
-                    placeholder="Password"
-                    type="password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                  />
+                {/* <div className="col-1 col-ml-auto"> */}
+                {/* <label className="form-label" htmlFor="password">
+                  Password
+                </label> */}
+                {/* </div> */}
+                {/* <div className="col-3 col-mr-auto"> */}
+                <input
+                  className="form-input"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+                {/* </div> */}
+              </Col>
 
+              <Col lg={6} md={6} sm={6} xs={6}>
+                <div className="signuplogingrp ">
                   <button
                     // className="btn btn-info col-1 col-mr-auto"
                     onClick={this.handleSubmit_login}
@@ -129,7 +147,7 @@ class Signup extends Component {
                   >
                     Sign up
                   </button>
-                </span>
+                </div>
               </Col>
             </form>
           </div>

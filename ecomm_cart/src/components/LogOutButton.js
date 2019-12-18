@@ -6,17 +6,17 @@ import "../css/custom.css";
 class LogoutButton extends Component {
   render() {
     return (
-      <div>
-        <Row className="logoutgrp">
-          <Col lg={8} md={8} sm={8} xs={12}>
-            <h5 className="textblue">Hello {this.props.username}</h5>
-          </Col>
-          <Col lg={4} md={4} sm={4} xs={12}>
-            <button className="logoutgrpbutton" onClick={this.props.logoutUser}>
-              Logout
-            </button>
-          </Col>
-        </Row>
+      <div className="flexparent_row_leftalign logoutgrp">
+        {/* <Col className="logoutgrp" lg={6} md={6} sm={6} xs={6}> */}
+        <span className="textblue displayflex">
+          Hello {this.props.username}
+        </span>
+        {/* </Col> */}
+        <span>
+          <button className="logoutgrpbutton " onClick={this.props.logoutUser}>
+            Logout
+          </button>
+        </span>
       </div>
     );
   }

@@ -1,7 +1,309 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
     <g fill="#61DAFB">
         <path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z"/>
         <circle cx="420.9" cy="296.5" r="45.7"/>
         <path d="M520.5 78.1z"/>
     </g>
+</svg> -->
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 540"><defs>
+<style>
+.cls-rwby{fill:#E0115F;}
+.cls-pearl{fill:#eae0c8;}
+.cls-coral{fill:#ff4040;}
+.cls-emerald{fill:#50c878;}
+.cls-yellow{fill:#fada5e;}
+.cls-diamond{fill:#f1f7fb;}
+.cls-blue{fill:#0067a5;}
+.cls-hessonite{fill:#cbb36d;}
+.cls-catseye{fill:#789753;}
+.cls-2{fill:none;stroke:#999;stroke-miterlimit:10;}
+.cls-1{fill:none;stroke:#c;stroke-miterlimit:10;}
+</style></defs>
+<title>Radar108 Logo 7</title>
+<g class="cls-1">
+
+<circle class="cls-2" cx="270" cy="270" r="235" />
+<circle class="cls-2" cx="270" cy="270" r="235.1" />
+<circle class="cls-2" cx="270" cy="270" r="234.9" />
+<circle class="cls-2" cx="270" cy="270" r="204"/>
+<circle class="cls-2" cx="270" cy="270" r="204.4" />
+<circle class="cls-2" cx="270" cy="270" r="204.2"/>
+<circle class="cls-2" cx="270" cy="270" r="203.6	" />
+<circle class="cls-2" cx="270" cy="270" r="203.8" />
+<circle class="cls-2" cx="270" cy="270" r="174"/>
+<circle class="cls-2" cx="270" cy="270" r="144"/>
+<circle class="cls-2" cx="270" cy="270" r="144.1"/>
+<circle class="cls-2" cx="270" cy="270" r="143.9"/>
+<circle class="cls-2" cx="270" cy="270" r="114"/>
+<circle class="cls-2" cx="270" cy="270" r="114.1"/>
+<circle class="cls-2" cx="270" cy="270" r="113.9"/>
+<circle class="cls-2" cx="270" cy="270" r="84"/>
+<circle class="cls-2" cx="270" cy="270" r="84.1"/>
+<circle class="cls-2" cx="270" cy="270" r="83.9"/>
+<circle class="cls-1" cx="270" cy="270" r="55"/>
+<circle class="cls-1" cx="270" cy="270" r="55.1"/>
+<circle class="cls-1" cx="270" cy="270" r="54.9"/>
+<line class="cls-2" x1="270" y1="1" x2="270" y2="540"/>
+<line class="cls-2" x1="1" y1="270" x2="540" y2="270"/>
+</g>
+
+<circle class="cls-rwby" cx="270" cy="216" r="11"/>
+<circle class="cls-rwby" cx="270" cy="324" r="11"/>
+<circle class="cls-rwby" cx="270" cy="36" r="11"/>
+<circle class="cls-rwby" cx="270" cy="504" r="11"/>
+
+<circle class="cls-yellow" cx="270" cy="186" r="11"/>
+<circle class="cls-yellow" cx="329.396959914356" cy="329.396959914356" r="11"/>
+<circle class="cls-yellow" cx="354" cy="270" r="11"/>
+<circle class="cls-yellow" cx="210.60276367711" cy="210.60276367711" r="11"/>
+<circle class="cls-yellow" cx="270" cy="354" r="11"/>
+<circle class="cls-yellow" cx="329.396959914356" cy="210.60276367711" r="11"/>
+<circle class="cls-yellow" cx="186" cy="270" r="11"/>
+<circle class="cls-yellow" cx="210.60276367711" cy="329.396959914356" r="11"/>
+
+
+<circle class="cls-catseye" cx="382.268083843392" cy="289.79589225403" r="11"/>
+<circle class="cls-emerald" cx="368.726896031426" cy="327" r="11"/>
+<circle class="cls-catseye" cx="343.277787504265" cy="357.329066515564" r="11"/>
+<circle class="cls-emerald" cx="308.990296339126" cy="377.124958769594" r="11"/>
+<circle class="cls-catseye" cx="270" cy="384" r="11"/>
+<circle class="cls-emerald" cx="231.009703660874" cy="377.124958769594" r="11"/>
+<circle class="cls-catseye" cx="196.722212495735" cy="357.329066515564" r="11"/>
+<circle class="cls-emerald" cx="171.273103968574" cy="327" r="11"/>
+<circle class="cls-catseye" cx="157.731916156608" cy="289.79589225403" r="11"/>
+<circle class="cls-emerald" cx="157.731916156608" cy="250.20410774597" r="11"/>
+<circle class="cls-catseye" cx="171.273103968574" cy="213" r="11"/>
+<circle class="cls-emerald" cx="196.722212495734" cy="182.670933484437" r="11"/>
+<circle class="cls-catseye" cx="231.009703660874" cy="162.875041230406" r="11"/>
+<circle class="cls-emerald" cx="270" cy="156" r="11"/>
+<circle class="cls-catseye" cx="308.990296339126" cy="162.875041230406" r="11"/>
+<circle class="cls-emerald" cx="343.277787504265" cy="182.670933484436" r="11"/>
+<circle class="cls-catseye" cx="368.726896031426" cy="213" r="11"/>
+<circle class="cls-emerald" cx="382.268083843392" cy="250.20410774597" r="11"/>
+
+
+<circle class="cls-hessonite" cx="411.233080378065" cy="298.093006370322" r="11"/>
+<circle class="cls-blue" cx="403.038652681625" cy="325.106414260573" r="11"/>
+<circle class="cls-hessonite" cx="389.731624171567" cy="350.002113554823" r="11"/>
+<circle class="cls-blue" cx="371.823376490863" cy="371.823376490863" r="11"/>
+<circle class="cls-hessonite" cx="350.002113554823" cy="389.731624171567" r="11"/>
+<circle class="cls-blue" cx="325.106414260573" cy="403.038652681625" r="11"/>
+<circle class="cls-hessonite" cx="298.093006370322" cy="411.233080378065" r="11"/>
+<circle class="cls-blue" cx="270" cy="414" r="11"/>
+<circle class="cls-hessonite" cx="241.906993629678" cy="411.233080378065" r="11"/>
+<circle class="cls-blue" cx="214.893585739427" cy="403.038652681625" r="11"/>
+<circle class="cls-hessonite" cx="189.997886445177" cy="389.731624171567" r="11"/>
+<circle class="cls-blue" cx="168.176623509137" cy="371.823376490863" r="11"/>
+<circle class="cls-hessonite" cx="150.268375828433" cy="350.002113554823" r="11"/>
+<circle class="cls-blue" cx="136.961347318375" cy="325.106414260573" r="11"/>
+<circle class="cls-hessonite" cx="128.766919621935" cy="298.093006370322" r="11"/>
+<circle class="cls-blue" cx="126" cy="270" r="11"/>
+<circle class="cls-hessonite" cx="128.766919621935" cy="241.906993629678" r="11"/>
+<circle class="cls-blue" cx="136.961347318375" cy="214.893585739427" r="11"/>
+<circle class="cls-hessonite" cx="150.268375828433" cy="189.997886445177" r="11"/>
+<circle class="cls-blue" cx="168.176623509137" cy="168.176623509137" r="11"/>
+<circle class="cls-hessonite" cx="189.997886445177" cy="150.268375828433" r="11"/>
+<circle class="cls-blue" cx="214.893585739427" cy="136.961347318375" r="11"/>
+<circle class="cls-hessonite" cx="241.906993629677" cy="128.766919621935" r="11"/>
+<circle class="cls-blue" cx="270" cy="126" r="11"/>
+<circle class="cls-hessonite" cx="298.093006370322" cy="128.766919621935" r="11"/>
+<circle class="cls-blue" cx="325.106414260573" cy="136.961347318375" r="11"/>
+<circle class="cls-hessonite" cx="350.002113554823" cy="150.268375828433" r="11"/>
+<circle class="cls-blue" cx="371.823376490863" cy="168.176623509137" r="11"/>
+<circle class="cls-hessonite" cx="389.731624171567" cy="189.997886445177" r="11"/>
+<circle class="cls-blue" cx="403.038652681625" cy="214.893585739427" r="11"/>
+<circle class="cls-hessonite" cx="411.233080378065" cy="241.906993629677" r="11"/>
+<circle class="cls-blue" cx="414" cy="270" r="11"/>
+
+
+<circle class="cls-pearl" cx="440.656638790162" cy="303.945716030806" r="11"/>
+<circle class="cls-coral" cx="430.755038656964" cy="336.586917231526" r="11"/>
+<circle class="cls-pearl" cx="414.675712540643" cy="366.669220545411" r="11"/>
+<circle class="cls-coral" cx="393.036579926459" cy="393.036579926459" r="11"/>
+<circle class="cls-pearl" cx="366.669220545411" cy="414.675712540643" r="11"/>
+<circle class="cls-coral" cx="336.586917231526" cy="430.755038656964" r="11"/>
+<circle class="cls-pearl" cx="303.945716030806" cy="440.656638790162" r="11"/>
+<circle class="cls-coral" cx="270" cy="444" r="11"/>
+<circle class="cls-pearl" cx="236.054283969194" cy="440.656638790162" r="11"/>
+<circle class="cls-coral" cx="203.413082768474" cy="430.755038656964" r="11"/>
+<circle class="cls-pearl" cx="173.330779454589" cy="414.675712540643" r="11"/>
+<circle class="cls-coral" cx="146.963420073541" cy="393.036579926459" r="11"/>
+<circle class="cls-pearl" cx="125.324287459357" cy="366.669220545411" r="11"/>
+<circle class="cls-coral" cx="109.244961343036" cy="336.586917231526" r="11"/>
+<circle class="cls-pearl" cx="99.3433612098379" cy="303.945716030806" r="11"/>
+<circle class="cls-coral" cx="96" cy="270" r="11"/>
+<circle class="cls-pearl" cx="99.3433612098379" cy="236.054283969194" r="11"/>
+<circle class="cls-coral" cx="109.244961343036" cy="203.413082768474" r="11"/>
+<circle class="cls-pearl" cx="125.324287459357" cy="173.330779454589" r="11"/>
+<circle class="cls-coral" cx="146.963420073541" cy="146.963420073541" r="11"/>
+<circle class="cls-pearl" cx="173.330779454589" cy="125.324287459357" r="11"/>
+<circle class="cls-coral" cx="203.413082768474" cy="109.244961343036" r="11"/>
+<circle class="cls-pearl" cx="236.054283969194" cy="99.3433612098379" r="11"/>
+<circle class="cls-coral" cx="270" cy="96" r="11"/>
+<circle class="cls-pearl" cx="303.945716030806" cy="99.3433612098379" r="11"/>
+<circle class="cls-coral" cx="336.586917231526" cy="109.244961343036" r="11"/>
+<circle class="cls-pearl" cx="366.669220545411" cy="125.324287459357" r="11"/>
+<circle class="cls-coral" cx="393.036579926459" cy="146.963420073541" r="11"/>
+<circle class="cls-pearl" cx="414.675712540643" cy="173.330779454589" r="11"/>
+<circle class="cls-coral" cx="430.755038656964" cy="203.413082768474" r="11"/>
+<circle class="cls-pearl" cx="440.656638790162" cy="236.054283969194" r="11"/>
+<circle class="cls-coral" cx="444" cy="270" r="11"/>
+
+<circle class="cls-diamond" cx="468.885294085092" cy="315.394270527088" r="11"/>
+<circle class="cls-diamond" cx="429.493622423478" cy="397.191919579182" r="11"/>
+<circle class="cls-diamond" cx="358.512282779982" cy="453.797649052093" r="11"/>
+<circle class="cls-diamond" cx="270" cy="474" r="11"/>
+<circle class="cls-diamond" cx="181.487717220018" cy="453.797649052094" r="11"/>
+<circle class="cls-diamond" cx="110.506377576522" cy="397.191919579182" r="11"/>
+<circle class="cls-diamond" cx="71.114705914908" cy="315.394270527088" r="11"/>
+<circle class="cls-diamond" cx="71.114705914908" cy="224.605729472912" r="11"/>
+<circle class="cls-diamond" cx="110.506377576522" cy="142.808080420818" r="11"/>
+<circle class="cls-diamond" cx="181.487717220018" cy="86.2023509479064" r="11"/>
+<circle class="cls-diamond" cx="270" cy="66" r="11"/>
+<circle class="cls-diamond" cx="358.512282779982" cy="86.2023509479066" r="11"/>
+<circle class="cls-diamond" cx="429.493622423478" cy="142.808080420819" r="11"/>
+<circle class="cls-diamond" cx="468.885294085092" cy="224.605729472912" r="11"/>
+
+<defs>
+    <filter id="f4" x="-1" y="0" width="300%" height="300%">
+      <feOffset result="offOut" in="SourceGraphic" dx="-4" dy="4" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.1 0 0 0 0 0 0.1 0 0 0 0 0 0.1 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="1" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+ <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(255,255,255);
+      stop-opacity:0" />
+      <stop offset="100%" style="stop-color:rgb(224, 17, 95);stop-opacity:1" />
+    </radialGradient>
+	
+	
+	
+ </defs>
+
+<!--  
+  <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+   --> 
+  
+<circle class="cls-diamond" cx="468.885294085092" cy="315.394270527088" r="11" filter="url(#f4)" fill="url(#grad1)" />
+<circle class="cls-diamond" cx="429.493622423478" cy="397.191919579182" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="358.512282779982" cy="453.797649052093" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="270" cy="474" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="181.487717220018" cy="453.797649052094" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="110.506377576522" cy="397.191919579182" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="71.114705914908" cy="315.394270527088" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="71.114705914908" cy="224.605729472912" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="110.506377576522" cy="142.808080420818" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="181.487717220018" cy="86.2023509479064" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="270" cy="66" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="358.512282779982" cy="86.2023509479066" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="429.493622423478" cy="142.808080420819" r="11" filter="url(#f4)"/>
+<circle class="cls-diamond" cx="468.885294085092" cy="224.605729472912" r="11" filter="url(#f4)"/>
+
+<circle class="cls-rwby" cx="270" cy="216" r="11" filter="url(#f4)"/>
+<circle class="cls-rwby" cx="270" cy="324" r="11" filter="url(#f4)"/>
+<circle class="cls-rwby" cx="270" cy="36" r="11" filter="url(#f4)"/>
+<circle class="cls-rwby" cx="270" cy="504" r="11" filter="url(#f4)"/>
+
+<circle class="cls-yellow" cx="270" cy="186" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="329.396959914356" cy="329.396959914356" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="354" cy="270" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="210.60276367711" cy="210.60276367711" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="270" cy="354" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="329.396959914356" cy="210.60276367711" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="186" cy="270" r="11" filter="url(#f4)"/>
+<circle class="cls-yellow" cx="210.60276367711" cy="329.396959914356" r="11" filter="url(#f4)"/>
+
+
+<circle class="cls-catseye" cx="382.268083843392" cy="289.79589225403" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="368.726896031426" cy="327" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="343.277787504265" cy="357.329066515564" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="308.990296339126" cy="377.124958769594" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="270" cy="384" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="231.009703660874" cy="377.124958769594" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="196.722212495735" cy="357.329066515564" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="171.273103968574" cy="327" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="157.731916156608" cy="289.79589225403" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="157.731916156608" cy="250.20410774597" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="171.273103968574" cy="213" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="196.722212495734" cy="182.670933484437" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="231.009703660874" cy="162.875041230406" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="270" cy="156" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="308.990296339126" cy="162.875041230406" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="343.277787504265" cy="182.670933484436" r="11" filter="url(#f4)"/>
+<circle class="cls-catseye" cx="368.726896031426" cy="213" r="11" filter="url(#f4)"/>
+<circle class="cls-emerald" cx="382.268083843392" cy="250.20410774597" r="11" filter="url(#f4)"/>
+
+
+<circle class="cls-hessonite" cx="411.233080378065" cy="298.093006370322" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="403.038652681625" cy="325.106414260573" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="389.731624171567" cy="350.002113554823" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="371.823376490863" cy="371.823376490863" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="350.002113554823" cy="389.731624171567" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="325.106414260573" cy="403.038652681625" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="298.093006370322" cy="411.233080378065" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="270" cy="414" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="241.906993629678" cy="411.233080378065" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="214.893585739427" cy="403.038652681625" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="189.997886445177" cy="389.731624171567" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="168.176623509137" cy="371.823376490863" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="150.268375828433" cy="350.002113554823" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="136.961347318375" cy="325.106414260573" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="128.766919621935" cy="298.093006370322" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="126" cy="270" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="128.766919621935" cy="241.906993629678" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="136.961347318375" cy="214.893585739427" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="150.268375828433" cy="189.997886445177" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="168.176623509137" cy="168.176623509137" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="189.997886445177" cy="150.268375828433" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="214.893585739427" cy="136.961347318375" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="241.906993629677" cy="128.766919621935" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="270" cy="126" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="298.093006370322" cy="128.766919621935" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="325.106414260573" cy="136.961347318375" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="350.002113554823" cy="150.268375828433" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="371.823376490863" cy="168.176623509137" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="389.731624171567" cy="189.997886445177" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="403.038652681625" cy="214.893585739427" r="11" filter="url(#f4)"/>
+<circle class="cls-hessonite" cx="411.233080378065" cy="241.906993629677" r="11" filter="url(#f4)"/>
+<circle class="cls-blue" cx="414" cy="270" r="11" filter="url(#f4)"/>
+
+
+<circle class="cls-pearl" cx="440.656638790162" cy="303.945716030806" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="430.755038656964" cy="336.586917231526" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="414.675712540643" cy="366.669220545411" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="393.036579926459" cy="393.036579926459" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="366.669220545411" cy="414.675712540643" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="336.586917231526" cy="430.755038656964" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="303.945716030806" cy="440.656638790162" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="270" cy="444" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="236.054283969194" cy="440.656638790162" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="203.413082768474" cy="430.755038656964" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="173.330779454589" cy="414.675712540643" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="146.963420073541" cy="393.036579926459" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="125.324287459357" cy="366.669220545411" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="109.244961343036" cy="336.586917231526" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="99.3433612098379" cy="303.945716030806" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="96" cy="270" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="99.3433612098379" cy="236.054283969194" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="109.244961343036" cy="203.413082768474" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="125.324287459357" cy="173.330779454589" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="146.963420073541" cy="146.963420073541" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="173.330779454589" cy="125.324287459357" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="203.413082768474" cy="109.244961343036" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="236.054283969194" cy="99.3433612098379" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="270" cy="96" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="303.945716030806" cy="99.3433612098379" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="336.586917231526" cy="109.244961343036" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="366.669220545411" cy="125.324287459357" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="393.036579926459" cy="146.963420073541" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="414.675712540643" cy="173.330779454589" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="430.755038656964" cy="203.413082768474" r="11" filter="url(#f4)"/>
+<circle class="cls-pearl" cx="440.656638790162" cy="236.054283969194" r="11" filter="url(#f4)"/>
+<circle class="cls-coral" cx="444" cy="270" r="11" filter="url(#f4)"/>
+
+<!--Aman was here...then he left-->
+
 </svg>

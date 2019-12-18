@@ -26,16 +26,15 @@ class CartSummary extends Component {
 
   render() {
     return (
-      <div>
-        <p> ITEMS IN CART: {this.props.useritemsquantity} </p>
-        <Button
-          className="bkcoral"
+      <div className="cartsummary flexparent_row_leftalign">
+        <button
+          className="bkgreen"
           onClick={this.toggleState}
           variant="info"
           size="lg"
         >
-          VIEW CART
-        </Button>
+          View Cart ({this.props.useritemsquantity})
+        </button>
       </div>
     );
   }

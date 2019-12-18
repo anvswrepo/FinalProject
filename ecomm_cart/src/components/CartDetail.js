@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 // import { DropdownButton } from "react-bootstrap";
 // import { Dropdown } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import SingleCartItem from "./SingleCartItem.js";
 
 import "../css/custom.css";
 
@@ -11,12 +12,15 @@ class CartDetail extends Component {
     super();
     this.state = {
       highScoringUser: "",
-      highScore: 0
+      highScore: 0,
+      items: [],
+      totalprice: 0
     };
     //     this.saveLeaderboardScores = this.saveLeaderboardScores.bind(this);
     //     this.handleClick = this.handleClick.bind(this);
     //     this.callLeaderboardAPI = this.callLeaderboardAPI.bind(this);
     this.toggleState = this.toggleState.bind(this);
+    this.getCartDetails = this.getCartDetails.bind(this);
   }
 
   //   handleClick(event) {
@@ -53,43 +57,66 @@ class CartDetail extends Component {
   //     );
   //   }
 
-  //   async callLeaderboardAPI() {
-  //     try {
-  //       const number = this.state.numberOfQuestions;
-  //       const level = this.state.difficultyOfQuestions;
-  //       const type = this.state.typeOfQuestions;
-
-  //       axios.get(`http://localhost:3003/leaderboard/`).then(response => {
-  //         console.log(response);
-  //         this.saveLeaderboardScores(response);
-  //       });
-  //     } catch (error) {
-  //       console.log("api fail", error);
-  //     }
-  //   }
+  async getCartDetails() {
+    try {
+      axios.get(`http://localhost:3000/users/1`).then(response => {
+        console.log(response);
+        // this.saveLeaderboardScores(response);
+        this.setState({
+          items: response.data.user.cartitems
+        });
+        let tprice = 0;
+        this.state.items.map(function(item, index) {
+          tprice = tprice + item.price * item.user_quantity;
+        });
+        this.setState({
+          totalprice: tprice
+        });
+      });
+    } catch (error) {
+      console.log("api fail", error);
+    }
+  }
 
   toggleState() {
-    console.log("Toggle to CONTINUR shopping");
+    console.log("Toggle to CONTINUE shopping");
     this.props.toggle_fetchCartDetail();
   }
 
   componentDidMount() {
     console.log(" In Cart Detail");
-    // this.callLeaderboardAPI();
+    this.getCartDetails();
   }
 
   render() {
+    const { toggle_fetchCartDetail, modifyCart, removeFromCart } = this.props;
     return (
-      <div className="textcenter textcoral">
-        <p>CartDetail </p>
-        <Button
+      <div className="cartdetailmain textcenter ">
+        <button
           className="bkcoral"
           onClick={this.toggleState}
           variant="info"
           size="lg"
         >
-          BACK TO SHOPPING
-        </Button>
+          Back to Shopping
+        </button>
+        <div className="cartitemslist">
+          {this.state.items.map(function(item, index) {
+            // return <li key={index}> name {item.name} </li>;
+
+            return (
+              <SingleCartItem
+                key={index}
+                item={item}
+                modifyCart={modifyCart}
+                removeFromCart={removeFromCart}
+              />
+            );
+
+            // params.require(:product).permit(:name, :description, :category, :keyword, :price, :quantity_instock)
+          })}
+          Total Price: {this.state.totalprice}
+        </div>
       </div>
     );
   }
