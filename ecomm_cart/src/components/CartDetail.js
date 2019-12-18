@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import axios from "axios";
 // import { DropdownButton } from "react-bootstrap";
 // import { Dropdown } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
 import "../css/custom.css";
 
 class CartDetail extends Component {
@@ -14,6 +16,7 @@ class CartDetail extends Component {
     //     this.saveLeaderboardScores = this.saveLeaderboardScores.bind(this);
     //     this.handleClick = this.handleClick.bind(this);
     //     this.callLeaderboardAPI = this.callLeaderboardAPI.bind(this);
+    this.toggleState = this.toggleState.bind(this);
   }
 
   //   handleClick(event) {
@@ -65,6 +68,11 @@ class CartDetail extends Component {
   //     }
   //   }
 
+  toggleState() {
+    console.log("Toggle to CONTINUR shopping");
+    this.props.toggle_fetchCartDetail();
+  }
+
   componentDidMount() {
     console.log(" In Cart Detail");
     // this.callLeaderboardAPI();
@@ -74,6 +82,14 @@ class CartDetail extends Component {
     return (
       <div className="textcenter textcoral">
         <p>CartDetail </p>
+        <Button
+          className="bkcoral"
+          onClick={this.toggleState}
+          variant="info"
+          size="lg"
+        >
+          BACK TO SHOPPING
+        </Button>
       </div>
     );
   }

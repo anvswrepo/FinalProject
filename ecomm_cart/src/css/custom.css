@@ -93,6 +93,10 @@ h1,
   display: block;
 }
 
+.SignupForm {
+  width: 100%;
+}
+
 /* .search_main {
   height: 200px;
 } */

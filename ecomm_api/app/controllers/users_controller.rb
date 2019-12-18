@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user,   only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -110,10 +110,20 @@ class UsersController < ApplicationController
 
     if @user.save
       render json: @user, status: :created, location: @user
-    else
+    else 
+    
+        # @user = @user2 
+        # if @user
+        #   # // need code here to enable login // 
+        # render json: @user, status: :accepted, location: @user2
+        #   else
       render json: @user.errors, status: :unprocessable_entity
+    
     end
   end
+
+
+
 
   # PATCH/PUT /users/1
   def update
@@ -133,6 +143,12 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def validate_user
+      if User.exists?(username: params[:username], password: params[:password]) 
+        @user2 = User.find_by(username: params[:username])
+      end  
     end
 
     # Only allow a trusted parameter "white list" through.

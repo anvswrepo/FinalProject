@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 
 // import { Redirect } from "react-router-dom";
 import axios from "axios";
-// import "../css/custom.css";
+import "../css/custom.css";
 
 class Signup extends Component {
   constructor() {
@@ -33,21 +33,22 @@ class Signup extends Component {
       username: this.state.username,
       password: this.state.password
     };
-
     axios.post(`http://localhost:3000/users`, payloadobj).then(response => {
       console.log(response);
       //
 
       if (!response.data.error) {
-        console.log("successful signup");
-        //   this.props.updateUserStatus(this.state.username);
+        console.log("successful signup", response.data.id);
+        this.props.updateUserStatus(this.state.username);
+        this.props.updateUserId(response.data.id);
+
         // this.setState({
         //   //redirect to login page
         //   redirectTo: "/login"
         // });
       } else {
-        alert("username already taken");
-        //   console.log(response.data.error);
+        alert("Username already taken");
+        console.log(response.data.error);
       }
 
       //
@@ -64,7 +65,7 @@ class Signup extends Component {
     };
 
     axios
-      .post(`http://localhost:3003/users/login`, payloadobj)
+      .post(`http://localhost:3000/users`, payloadobj)
       .then(response => {
         console.log("login response: ");
         console.log(response);
@@ -74,13 +75,13 @@ class Signup extends Component {
           this.props.updateUserStatus(this.state.username);
         } else {
           console.log(" something went wrong");
-          alert("incorrect username or login. try again");
+          alert("Incorrect username or login. try again");
         }
       })
       .catch(error => {
         console.log("login error: ");
         console.log(error);
-        alert("something went wrong, try again");
+        alert("Something went wrong, try again");
       });
   }
 
@@ -89,11 +90,10 @@ class Signup extends Component {
       <div>
         <Row>
           <div className="SignupForm">
-            {/* <h4>Sign up</h4> */}
             <form>
               {/* <div className="form-group">
               <div className="col-1 col-ml-auto"> */}
-              <Row>
+              <Col lg={12} md={12} sm={12} xs={12}>
                 <div>
                   <div className="col-1 col-ml-auto">
                     <label className="form-label" htmlFor="username">
@@ -129,8 +129,8 @@ class Signup extends Component {
                     />
                   </div>
                 </div>
-              </Row>
-              <Row>
+              </Col>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="signuplogingrp ">
                   <button
                     // className="btn btn-info col-1 col-mr-auto"
@@ -148,7 +148,7 @@ class Signup extends Component {
                     Sign up
                   </button>
                 </div>
-              </Row>
+              </Col>
             </form>
           </div>
         </Row>
