@@ -1,3 +1,11 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
 Product.create([
     { name: '2020 GAME ON!',description: '2020 GAME ON!', keyword: '2020 GAME ON!', quantity_instock: '597', category: '3852', price: 12.99 },
     { name: '2020 SCHOLASTIC YEAR IN SPORTS',description: '2020 SCHOLASTIC YEAR IN SPORTS', keyword: '2020 SCHOLASTIC YEAR IN SPORTS', quantity_instock: '756', category: '3857', price: 9.99 },
@@ -69,4 +77,38 @@ Product.create([
     { name: 'WIZARDS UNITE OFFICIAL GAME GUIDE',description: 'WIZARDS UNITE OFFICIAL GAME GUIDE', keyword: 'WIZARDS UNITE OFFICIAL GAME GUIDE', quantity_instock: '385', category: '3780', price: 9.99 },
     { name: 'WORD COLLECTOR',description: 'WORD COLLECTOR', keyword: 'WORD COLLECTOR', quantity_instock: '43', category: '3826', price: 5.99 },
     { name: 'WORDS ON FIRE',description: 'WORDS ON FIRE', keyword: 'WORDS ON FIRE', quantity_instock: '151', category: '3848', price: 7.99 }
+])
+
+# d1 = DateTime.new(2015,22,06)
+# d2 = DateTime.new(2015,11,06)
+# d3 = DateTime.new(2015,28,06)
+
+d1 = Date.parse("Dec 8 2019")
+d2 = Date.parse("Dec 1 2019")
+d3 = Date.parse("Dec 1 2019")
+
+
+User.create([
+{username: 'sunny', email: 'suneetha@radar108.com', password: 'xyz' },
+{username: 'suneetha', email: 'smalkani2000@gmail.com', password: 'xyz' },
+{username: 'smj', email: 'suneetha.malkani@gmail.com', password: 'xyz' }
+]
+)
+
+Usercart.create([
+{    user_id: 1, last_accessed_date: d1
+},
+{    user_id: 2, last_accessed_date: d2},
+{    user_id: 3, last_accessed_date: d3}
+])
+
+Cartitem.create([
+{usercart_id: 1, quantity: 1, product_id: 1},
+{usercart_id: 1, quantity: 2, product_id: 2},
+{usercart_id: 2, quantity: 1, product_id: 3},
+{usercart_id: 2, quantity: 1, product_id: 4},
+{usercart_id: 3, quantity: 1, product_id: 5},
+{usercart_id: 3, quantity: 1, product_id: 6},
+{usercart_id: 3, quantity: 1, product_id: 7}
+
 ])
