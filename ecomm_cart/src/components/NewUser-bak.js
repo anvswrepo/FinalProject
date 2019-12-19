@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 // import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "../css/custom.css";
+// import { getCurrentDate } from "../utils";
 
 class Signup extends Component {
   constructor() {
@@ -27,6 +28,8 @@ class Signup extends Component {
   handleSubmit_signup(event) {
     // console.log("sign-up handleSubmit, username: ");
     console.log("new username created: " + this.state.username);
+    // console.log(getCurrentDate());
+
     event.preventDefault();
 
     let payloadobj = {
@@ -42,6 +45,19 @@ class Signup extends Component {
         this.props.updateUserStatus(this.state.username);
         this.props.updateUserId(response.data.id);
 
+        let cartpayloadobj = {
+          last_accessed_date: this.props.currentDate
+        };
+        axios
+          .post(
+            `http://localhost:3000/users/${response.data.id}/usercarts`,
+            cartpayloadobj
+          )
+          .then(response => {
+            console.log(response);
+            this.props.updateuserCartId(response.data.id);
+            // updateuserCartId
+          });
         // this.setState({
         //   //redirect to login page
         //   redirectTo: "/login"
@@ -57,7 +73,6 @@ class Signup extends Component {
 
   handleSubmit_login(event) {
     event.preventDefault();
-    // console.log("handleSubmit");
 
     let payloadobj = {
       username: this.state.username,
@@ -94,44 +109,26 @@ class Signup extends Component {
               {/* <div className="form-group">
               <div className="col-1 col-ml-auto"> */}
               <Col lg={12} md={12} sm={12} xs={12}>
-                <div>
-                  <div className="col-1 col-ml-auto">
-                    {/* <label className="form-label" htmlFor="username">
-                      Username
-                    </label> */}
-                  </div>
-                  <div className="col-3 col-mr-auto">
-                    <input
-                      className="form-input"
-                      type="text"
-                      id="username"
-                      name="username"
-                      placeholder="Username"
-                      value={this.state.username}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                </div>
+                <span className="signuplogingrp ">
+                  <input
+                    className="form-input  "
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
 
-                {/* <div className="col-1 col-ml-auto"> */}
-                {/* <label className="form-label" htmlFor="password">
-                  Password
-                </label> */}
-                {/* </div> */}
-                {/* <div className="col-3 col-mr-auto"> */}
-                <input
-                  className="form-input"
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                />
-                {/* </div> */}
-              </Col>
+                  <input
+                    className="form-input "
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
 
-              <Col lg={6} md={6} sm={6} xs={6}>
-                <div className="signuplogingrp ">
                   <button
                     // className="btn btn-info col-1 col-mr-auto"
                     onClick={this.handleSubmit_login}
@@ -147,7 +144,7 @@ class Signup extends Component {
                   >
                     Sign up
                   </button>
-                </div>
+                </span>
               </Col>
             </form>
           </div>

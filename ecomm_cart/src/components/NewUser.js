@@ -29,7 +29,6 @@ class Signup extends Component {
     // console.log("sign-up handleSubmit, username: ");
     console.log("new username created: " + this.state.username);
     // console.log(getCurrentDate());
-
     event.preventDefault();
 
     let payloadobj = {
@@ -38,7 +37,6 @@ class Signup extends Component {
     };
     axios.post(`http://localhost:3000/users`, payloadobj).then(response => {
       console.log(response);
-      //
 
       if (!response.data.error) {
         console.log("successful signup", response.data.id);
@@ -48,6 +46,7 @@ class Signup extends Component {
         let cartpayloadobj = {
           last_accessed_date: this.props.currentDate
         };
+
         axios
           .post(
             `http://localhost:3000/users/${response.data.id}/usercarts`,
@@ -56,12 +55,7 @@ class Signup extends Component {
           .then(response => {
             console.log(response);
             this.props.updateuserCartId(response.data.id);
-            // updateuserCartId
           });
-        // this.setState({
-        //   //redirect to login page
-        //   redirectTo: "/login"
-        // });
       } else {
         alert("Username already taken");
         console.log(response.data.error);
@@ -73,22 +67,39 @@ class Signup extends Component {
 
   handleSubmit_login(event) {
     event.preventDefault();
-    // console.log("handleSubmit");
 
     let payloadobj = {
-      username: this.state.username,
-      password: this.state.password
+      username: this.state.username
+      // ,
+      // password: this.state.password
     };
 
+    console.log("get reg object", payloadobj);
+    let url = `http://localhost:3000/users?username=${this.state.username}`;
+    console.log(url);
+
     axios
-      .post(`http://localhost:3000/users`, payloadobj)
+      .get(url)
+      // .get(`http://localhost:3000/users`, payloadobj)
       .then(response => {
-        console.log("login response: ");
-        console.log(response);
-        if (response.status === 200 && response.data.success) {
+        console.log("login response: ", response);
+        if (response.status === 200) {
           console.log("success ");
           alert("Successful login");
           this.props.updateUserStatus(this.state.username);
+          this.props.updateUserId(response.data[0].id);
+
+          let carturl = `http://localhost:3000/users/${response.data[0].id}`;
+
+          axios
+            .get(carturl)
+            // .get(`http://localhost:3000/users`, payloadobj)
+            .then(response => {
+              console.log(response);
+              this.props.updateuserCartId(response.data.user.cart_id);
+              this.props.toggle_fetchCartDetail();
+              // this.props.toggle_fetchCartDetail();
+            });
         } else {
           console.log(" something went wrong");
           alert("Incorrect username or login. try again");
@@ -100,6 +111,35 @@ class Signup extends Component {
         alert("Something went wrong, try again");
       });
   }
+
+  // handleSubmit_login(event) {
+  //   event.preventDefault();
+
+  //   let payloadobj = {
+  //     username: this.state.username,
+  //     password: this.state.password
+  //   };
+
+  //   axios
+  //     .post(`http://localhost:3000/users`, payloadobj)
+  //     .then(response => {
+  //       console.log("login response: ");
+  //       console.log(response);
+  //       if (response.status === 200 && response.data.success) {
+  //         console.log("success ");
+  //         alert("Successful login");
+  //         this.props.updateUserStatus(this.state.username);
+  //       } else {
+  //         console.log(" something went wrong");
+  //         alert("Incorrect username or login. try again");
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.log("login error: ");
+  //       console.log(error);
+  //       alert("Something went wrong, try again");
+  //     });
+  // }
 
   render() {
     return (

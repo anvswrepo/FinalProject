@@ -58,6 +58,9 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"last_accessed_date": "
 curl -i -X POST -H 'Content-Type: application/json' -d '{"quantity": "20","product_id": "12"}' http://localhost:3000/users/1/usercarts/1/cartitems
 
 
+curl -i -X GET -H 'Content-Type: application/json' -d '{"username": "smj"}' http://localhost:3000/users
+
+
  create_table "cartitems", force: :cascade do |t|
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false

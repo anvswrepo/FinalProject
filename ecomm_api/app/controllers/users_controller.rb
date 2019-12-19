@@ -3,10 +3,50 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
 
-    render json: @users
+# puts params[:username]
+
+    if params[:username]
+      # @users = User.exists?(username: params[:username]) 
+      found = User.exists?(username: params[:username]) 
+
+      if found 
+          @user = User.where(username: params[:username])
+          # user_details = {
+          #   id : @user.id,
+          #   username : @user.username,
+          #   email : @user.email
+          # }
+          render json:  @user, status: 200 
+          
+      else
+        # res = {status: "400"}
+          render json: @user, status: 400
+          end
+
+      # render json: @users
+
+    else
+      @users = User.all
+      render json: @users
+    end
   end
+
+ 
+
+  # User.exists?(username: 'smj')
+
+  # class PostsController < ApplicationController
+  #   def index
+  #     if params[:search]
+  #       @posts = Post.search(params[:search]).order("created_at DESC")
+  #     else
+  #       @posts = Post.all.order('created_at DESC')
+  #     end
+  #   end
+  # end
+
+
 
   # GET /users/1
   # user and carts

@@ -59,20 +59,29 @@ class CartDetail extends Component {
 
   async getCartDetails() {
     try {
-      axios.get(`http://localhost:3000/users/1`).then(response => {
-        console.log(response);
-        // this.saveLeaderboardScores(response);
-        this.setState({
-          items: response.data.user.cartitems
+      axios
+        .get(`http://localhost:3000/users/${this.props.userId}`)
+        .then(response => {
+          console.log(response);
+          // this.saveLeaderboardScores(response);
+          let newcart = [...this.state.items, ...response.data.user.cartitems];
+          console.log(newcart);
+
+          this.setState({
+            // items: response.data.user.cartitems
+            items: newcart
+          });
+          let tprice = 0;
+          let tqty = 0;
+          this.state.items.map(function(item, index) {
+            tprice = tprice + item.price * item.user_quantity;
+            tqty = tqty + item.user_quantity;
+          });
+          this.setState({
+            totalprice: tprice
+          });
+          this.props.updateuseritemsquantity(tqty, tprice);
         });
-        let tprice = 0;
-        this.state.items.map(function(item, index) {
-          tprice = tprice + item.price * item.user_quantity;
-        });
-        this.setState({
-          totalprice: tprice
-        });
-      });
     } catch (error) {
       console.log("api fail", error);
     }
@@ -89,7 +98,16 @@ class CartDetail extends Component {
   }
 
   render() {
-    const { toggle_fetchCartDetail, modifyCart, removeFromCart } = this.props;
+    const {
+      toggle_fetchCartDetail,
+      modifyCart,
+      removeFromCart,
+      userCartId,
+      userId,
+      updateuseritemsquantity,
+      useritemsquantity
+    } = this.props;
+
     return (
       <div className="cartdetailmain textcenter ">
         <button
@@ -110,12 +128,15 @@ class CartDetail extends Component {
                 item={item}
                 modifyCart={modifyCart}
                 removeFromCart={removeFromCart}
+                toggle_fetchCartDetail={toggle_fetchCartDetail}
+                updateuseritemsquantity={updateuseritemsquantity}
+                useritemsquantity={useritemsquantity}
               />
             );
 
             // params.require(:product).permit(:name, :description, :category, :keyword, :price, :quantity_instock)
           })}
-          Total Price: {this.state.totalprice}
+          Total Price: {this.props.totalprice}
         </div>
       </div>
     );

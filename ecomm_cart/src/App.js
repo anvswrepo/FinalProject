@@ -29,6 +29,7 @@ class App extends Component {
       username: "",
       cart: [],
       useritemsquantity: 0,
+      totalprice: 0,
       userId: null,
       userCartId: null,
       fetchCartDetail: false,
@@ -43,6 +44,16 @@ class App extends Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.toggle_fetchCartDetail = this.toggle_fetchCartDetail.bind(this);
     this.updateuserCartId = this.updateuserCartId.bind(this);
+    this.updateuseritemsquantity = this.updateuseritemsquantity.bind(this);
+  }
+
+  //  updateCart
+  updateuseritemsquantity(quantity, tprice) {
+    console.log(quantity);
+    this.setState({
+      useritemsquantity: quantity,
+      totalprice: tprice
+    });
   }
 
   //  updateCart
@@ -97,13 +108,22 @@ class App extends Component {
     // DB  HERE CALL TO UPDATE IN DB
   }
 
-  removeFromCart(productid, userquantity) {
-    console.log("add to cart id : ", productid, " qty: ", userquantity);
-    // var newqty = 0;
-    // newqty = parseInt(this.state.useritemsquantity) + parseInt(userquantity);
-    // this.setState({
-    //   useritemsquantity: newqty
+  removeFromCart(cartitemid, productid, userquantity) {
+    console.log(
+      "remove from  cart productid : ",
+      productid,
+      "cartitemid",
+      cartitemid,
+      " qty: ",
+      userquantity
+    );
+
     // DB  HERE CALL TO REMOVE IN DB
+    let url = `http://localhost:3000/users/${this.state.userId}/usercarts/${this.state.userCartId}/cartitems/${cartitemid}`;
+    console.log(url);
+    axios.delete(url).then(response => {
+      console.log(response);
+    });
   }
 
   // updateUserStatus
@@ -114,12 +134,14 @@ class App extends Component {
 
   // updateUserId
   updateUserId(userId) {
+    console.log("Userid to update: ", userId);
     this.setState({
       userId: userId
     });
   }
   // updateUsercartid
   updateuserCartId(cartId) {
+    console.log("Cart id to update: ", cartId);
     this.setState({
       userCartId: cartId
     });
@@ -135,8 +157,17 @@ class App extends Component {
 
   // logoutUser
   logoutUser() {
-    this.setState({ username: "", loggedIn: false });
+    this.setState({
+      username: "",
+      loggedIn: false,
+      cart: [],
+      useritemsquantity: 0,
+      userId: null,
+      userCartId: null
+    });
     // console.log(username);
+    this.updateuseritemsquantity(0);
+    this.toggle_fetchCartDetail();
   }
 
   componentDidMount() {
@@ -168,6 +199,8 @@ class App extends Component {
                   <img src={logo} className="App-logo" alt="logo" />
                   <h1>Book-o-Radar</h1>
                   <h5>{this.state.currentDate}</h5>
+                  {/* <h5>UserID {this.state.userId}</h5>
+                  <h5>CartID {this.state.userCartId}</h5> */}
                 </header>
               </div>
 
@@ -189,6 +222,8 @@ class App extends Component {
                   updateUserStatus={this.updateUserStatus}
                   updateUserId={this.updateUserId}
                   updateuserCartId={this.updateuserCartId}
+                  fetchCartDetail={this.fetchCartDetail}
+                  toggle_fetchCartDetail={this.toggle_fetchCartDetail}
                 />
               )}
 
@@ -221,6 +256,10 @@ class App extends Component {
                     modifyCart={this.modifyCart}
                     removeFromCart={this.removeFromCart}
                     userCartId={this.state.userCartId}
+                    userId={this.state.userId}
+                    updateuseritemsquantity={this.updateuseritemsquantity}
+                    useritemsquantity={this.state.useritemsquantity}
+                    totalprice={this.state.totalprice}
                   />
                 )}
               </div>

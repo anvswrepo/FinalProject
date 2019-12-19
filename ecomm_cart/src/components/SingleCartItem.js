@@ -96,10 +96,25 @@ class SingleCartItem extends Component {
   }
 
   callRemoveFromCart() {
-    console.log("Remove ", this.props.item.name, " ", this.props.item.id);
+    console.log(
+      "Remove ",
+      this.props.item,
+      this.props.item.name,
+      " ",
+      this.props.item.id
+    );
 
-    this.props.removeFromCart(this.props.item.id, this.state.userquantity);
+    // this removes from the database
+    this.props.removeFromCart(
+      this.props.item.id,
+      this.props.item.product_id,
+      this.state.userquantity
+    );
+    let newqty = this.props.useritemsquantity - this.state.userquantity;
+    this.props.updateuseritemsquantity(newqty);
+
     this.setState({ userquantity: 0 });
+    // this.props.toggle_fetchCartDetail();
   }
 
   componentDidMount() {
@@ -110,44 +125,46 @@ class SingleCartItem extends Component {
   }
 
   render() {
-    return (
-      <div className="singlecartitem flexparent_row_leftalign">
-        <div className="booktitleincart">
-          {" "}
-          {this.props.item.name.toLowerCase()}{" "}
-        </div>
-        <div className="bookprice"> ${this.props.item.price} </div>
-        <div>
-          <input
-            className="form-input form-input-incart "
-            type="integer"
-            id="userquantity"
-            name="userquantity"
-            placeholder="1"
-            value={this.state.userquantity}
-            onChange={this.handleChange}
-            //   disabled={this.props.item.quantity_instock > 0 ? false : true}
-          />
+    if (this.state.userquantity === 0) return null;
+    else
+      return (
+        <div className="singlecartitem flexparent_row_leftalign">
+          <div className="booktitleincart">
+            {" "}
+            {this.props.item.name.toLowerCase()}{" "}
+          </div>
+          <div className="bookprice"> ${this.props.item.price} </div>
+          <div>
+            <input
+              className="form-input form-input-incart "
+              type="integer"
+              id="userquantity"
+              name="userquantity"
+              placeholder="1"
+              value={this.state.userquantity}
+              onChange={this.handleChange}
+              //   disabled={this.props.item.quantity_instock > 0 ? false : true}
+            />
 
-          <button
-            className="updatebutton"
-            onClick={this.callModifyCart}
-            variant="info"
-            size="lg"
-          >
-            Update
-          </button>
-          <button
-            className="removebutton"
-            onClick={this.callRemoveFromCart}
-            variant="info"
-            size="lg"
-          >
-            Remove
-          </button>
+            <button
+              className="updatebutton"
+              onClick={this.callModifyCart}
+              variant="info"
+              size="lg"
+            >
+              Update
+            </button>
+            <button
+              className="removebutton"
+              onClick={this.callRemoveFromCart}
+              variant="info"
+              size="lg"
+            >
+              Remove
+            </button>
+          </div>
         </div>
-      </div>
-    );
+      );
   }
 }
 export default SingleCartItem;
