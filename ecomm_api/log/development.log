@@ -22076,3 +22076,17 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 1.9ms | Allocations: 13312)
 
 
+Started GET "/products/" for ::1 at 2019-12-19 17:37:27 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 60ms (Views: 57.7ms | ActiveRecord: 1.6ms | Allocations: 13315)
+
+
+Started GET "/products/" for ::1 at 2019-12-19 17:37:28 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 13214)
+
+
