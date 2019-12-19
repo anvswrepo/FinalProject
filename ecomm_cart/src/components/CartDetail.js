@@ -71,6 +71,9 @@ class CartDetail extends Component {
             // items: response.data.user.cartitems
             items: newcart
           });
+
+          this.props.updateProductCart(newcart);
+
           let tprice = 0;
           let tqty = 0;
           this.state.items.map(function(item, index) {
@@ -94,6 +97,9 @@ class CartDetail extends Component {
 
   componentDidMount() {
     console.log(" In Cart Detail");
+    this.setState({
+      items: this.props.products
+    });
     this.getCartDetails();
   }
 
@@ -105,7 +111,9 @@ class CartDetail extends Component {
       userCartId,
       userId,
       updateuseritemsquantity,
-      useritemsquantity
+      useritemsquantity,
+      totalprice,
+      updateProductCart
     } = this.props;
 
     return (
@@ -131,12 +139,14 @@ class CartDetail extends Component {
                 toggle_fetchCartDetail={toggle_fetchCartDetail}
                 updateuseritemsquantity={updateuseritemsquantity}
                 useritemsquantity={useritemsquantity}
+                totalprice={totalprice}
+                updateProductCart={updateProductCart}
               />
             );
 
             // params.require(:product).permit(:name, :description, :category, :keyword, :price, :quantity_instock)
           })}
-          Total Price: {this.props.totalprice}
+          Total Price: {this.props.totalprice.toFixed(2)}
         </div>
       </div>
     );

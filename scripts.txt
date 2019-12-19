@@ -60,6 +60,14 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"quantity": "20","produ
 
 curl -i -X GET -H 'Content-Type: application/json' -d '{"username": "smj"}' http://localhost:3000/users
 
+PUT    /users/:user_id/usercarts/:usercart_id/cartitems/:id(.:format)                           cartitems#update
+
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"quantity": "20","product_id": "12"}' http://localhost:3000/users/40/usercarts/17/cartitems/41
+
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"quantity": "20"}' http://localhost:3000/users/40/usercarts/17/cartitems/41
+
+
 
  create_table "cartitems", force: :cascade do |t|
     t.integer "quantity"
@@ -70,3 +78,14 @@ curl -i -X GET -H 'Content-Type: application/json' -d '{"username": "smj"}' http
 /users/:user_id/usercarts/:usercart_id/cartitems(.:format)
 
 /users/:user_id/usercarts/:usercart_id/cartitems/:id(.:format) 
+-----
+
+todos
+
+1. When item is removed update the display of items quantity - done. 
+On login - show items quantity in view cart  
+2. Update functionality -- DONE
+3. Take cart from visitor and add to user when logged in/signedup
+4. When new item is added to cart, if it already exists, update instead of add new
+
+

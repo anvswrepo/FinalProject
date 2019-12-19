@@ -74,10 +74,20 @@ class ProductSingleCard extends Component {
   //   }
 
   callAddToCart() {
-    // console.log("Add to cart", this.props.item.name, " ", this.props.item.id);
+    // console.log(
+    //   "Add to cart",
+    //   this.props,
+    //   this.props.item.name,
+    //   " ",
+    //   this.props.item.id
+    // );
 
-    this.props.updateCart(this.props.item.id, this.state.userquantity);
-    this.setState({ userquantity: 0 });
+    this.props.updateCart(
+      this.props.item.id,
+      this.state.userquantity,
+      this.props.item
+    );
+    // this.setState({ userquantity: 0 });
   }
   componentDidMount() {
     // console.log(" In Product Single Card", this.props);

@@ -32,6 +32,7 @@ class CartSummary extends Component {
           onClick={this.toggleState}
           variant="info"
           size="lg"
+          disabled={this.props.useritemsquantity === 0}
         >
           View Cart ({this.props.useritemsquantity})
         </button>

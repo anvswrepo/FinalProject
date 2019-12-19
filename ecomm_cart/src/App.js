@@ -27,7 +27,7 @@ class App extends Component {
       isFetching: false,
       loggedIn: false,
       username: "",
-      cart: [],
+      products: [],
       useritemsquantity: 0,
       totalprice: 0,
       userId: null,
@@ -45,6 +45,29 @@ class App extends Component {
     this.toggle_fetchCartDetail = this.toggle_fetchCartDetail.bind(this);
     this.updateuserCartId = this.updateuserCartId.bind(this);
     this.updateuseritemsquantity = this.updateuseritemsquantity.bind(this);
+    this.updateProductCart = this.updateProductCart.bind(this);
+  }
+
+  // Reducer functions
+  totalQuantity = () =>
+    this.state.products.reduce((sum, product) => sum + product.quantity, 0);
+
+  totalPrice = () =>
+    this.state.products.reduce(
+      (sum, product) => sum + product.quantity * product.price,
+      0
+    );
+
+  //updateProductCart
+  updateProductCart(cart) {
+    this.setState({
+      products: cart
+    });
+    console.log("products in cart : ", this.state.products);
+    this.setState({
+      totalprice: this.totalPrice(),
+      useritemsquantity: this.totalQuantity()
+    });
   }
 
   //  updateCart
@@ -57,13 +80,18 @@ class App extends Component {
   }
 
   //  updateCart
-  updateCart(productid, userquantity) {
+  updateCart(productid, userquantity, product) {
     console.log(
       "add to cart  product id : ",
       productid,
       " qty: ",
       userquantity
     );
+
+    this.setState({
+      products: [...this.state.products, { ...product, quantity: userquantity }]
+    });
+    console.log("updated products ", this.state.products);
     //localhost:3000/users/1/usercarts/1/cartitems
     // curl -i -X POST -H 'Content-Type: application/json' -d '{"quantity": "20","product_id": "12"}' http://localhost:3000/users/1/usercarts/1/cartitems
 
@@ -73,17 +101,17 @@ class App extends Component {
     };
 
     console.log(cartpayloadobj);
-
-    axios
-      .post(
-        `http://localhost:3000/users/${this.state.userId}/usercarts/${this.state.userCartId}/cartitems`,
-        cartpayloadobj
-      )
-      .then(response => {
-        console.log(response);
-      });
-
     // DB  HERE CALL TO UPDATE IN DB
+    if (this.state.loggedIn) {
+      axios
+        .post(
+          `http://localhost:3000/users/${this.state.userId}/usercarts/${this.state.userCartId}/cartitems`,
+          cartpayloadobj
+        )
+        .then(response => {
+          console.log(response);
+        });
+    }
     var newqty = 0;
     newqty = parseInt(this.state.useritemsquantity) + parseInt(userquantity);
     this.setState({
@@ -91,21 +119,36 @@ class App extends Component {
     });
   }
 
-  modifyCart(productid, userquantity, qtychange) {
+  modifyCart(cartitemid, userquantity, qtychange, newprice) {
     console.log(
-      "add to cart id : ",
-      productid,
+      "add to cart item id : ",
+      cartitemid,
       " qty: ",
       userquantity,
       "change",
-      qtychange
+      qtychange,
+      "newprice",
+      newprice
     );
     var newqty = 0;
     newqty = parseInt(this.state.useritemsquantity) + parseInt(userquantity);
     this.setState({
-      useritemsquantity: newqty
+      useritemsquantity: newqty,
+      totalprice: newprice
     });
+
     // DB  HERE CALL TO UPDATE IN DB
+    // curl -i -X PUT -H 'Content-Type: application/json' -d '{"quantity": "20"}' http://localhost:3000/users/40/usercarts/17/cartitems/41
+
+    let url = `http://localhost:3000/users/${this.state.userId}/usercarts/${this.state.userCartId}/cartitems/${cartitemid}`;
+    let payloadobj = {
+      quantity: userquantity
+    };
+    axios.put(url, payloadobj).then(response => {
+      console.log(response);
+    });
+
+    //
   }
 
   removeFromCart(cartitemid, productid, userquantity) {
@@ -260,6 +303,8 @@ class App extends Component {
                     updateuseritemsquantity={this.updateuseritemsquantity}
                     useritemsquantity={this.state.useritemsquantity}
                     totalprice={this.state.totalprice}
+                    updateProductCart={this.updateProductCart}
+                    products={this.state.products}
                   />
                 )}
               </div>

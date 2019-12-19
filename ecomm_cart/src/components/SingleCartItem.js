@@ -88,10 +88,27 @@ class SingleCartItem extends Component {
       parseInt(this.state.userquantity) -
       parseInt(this.props.item.user_quantity);
     console.log(qty_change);
+
+    // let newqty = this.props.useritemsquantity - this.state.userquantity;
+    let newprice = this.props.totalprice + qty_change * this.props.item.price;
+
+    console.log(
+      "new qty",
+      this.state.userquantity,
+      "old qty",
+      this.props.item.user_quantity,
+      "new price",
+      newprice,
+      "old price",
+      this.props.totalprice
+    );
+
+    // sending request to modifyCart(cartitemid, userquantity, qtychange, newprice) {
     this.props.modifyCart(
       this.props.item.id,
       this.state.userquantity,
-      qty_change
+      qty_change,
+      newprice
     );
   }
 
@@ -111,7 +128,10 @@ class SingleCartItem extends Component {
       this.state.userquantity
     );
     let newqty = this.props.useritemsquantity - this.state.userquantity;
-    this.props.updateuseritemsquantity(newqty);
+    let newprice =
+      this.props.totalprice - this.state.userquantity * this.props.item.price;
+
+    this.props.updateuseritemsquantity(newqty, newprice);
 
     this.setState({ userquantity: 0 });
     // this.props.toggle_fetchCartDetail();
